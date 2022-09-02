@@ -1,7 +1,6 @@
 package bunchbycycles;
 
 
-
 public class Main {
     
 public static void main(String[] args) {
@@ -33,7 +32,7 @@ public static void main(String[] args) {
 
   static void testBucketingByNumberOfCycles() {
     System.out.println("Counting batteries by usage cycles...\n");
-    CountsByUsage counts = countBatteriesByUsage(new int[] {100, 300, 500, 600, 900, 1000, 2000, 920, 919});
+    CountsByUsage counts = countBatteriesByUsage(new int[] {100,399, 300, 500, 400, 600, 900, 1000, 2000, 920, 919});
     printBatteryCount(counts);
   }
 
