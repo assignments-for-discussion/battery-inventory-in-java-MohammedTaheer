@@ -12,7 +12,7 @@ public static void main(String[] args) {
     for (int x : cycles){
         if(x < 400)
             counts.lowCount++;
-        else if( x>400 && x<=919)
+        else if( x>=400 && x<=919)
             counts.mediumCount++;
         else
             counts.highCount++;
