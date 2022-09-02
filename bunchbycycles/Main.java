@@ -1,28 +1,39 @@
 package bunchbycycles;
 
 public class Main {
-  static class CountsByUsage {
-    public int lowCount = 0;
-    public int mediumCount = 0;
-    public int highCount = 0;
-  };
+    
+public static void main(String[] args) {
+    testBucketingByNumberOfCycles();
+  }
 
   static CountsByUsage countBatteriesByUsage(int[] cycles) {
     CountsByUsage counts = new CountsByUsage();
-    
+    for (int x : cycles){
+        if(x < 400)
+            counts.lowCount++;
+        else if( x>400 && x<=919)
+            counts.mediumCount++;
+        else
+            counts.highCount++;
+    }
     return counts;
   }
 
   static void testBucketingByNumberOfCycles() {
     System.out.println("Counting batteries by usage cycles...\n");
     CountsByUsage counts = countBatteriesByUsage(new int[] {100, 300, 500, 600, 900, 1000});
-    assert(counts.lowCount == 2);
-    assert(counts.mediumCount == 3);
-    assert(counts.highCount == 1);
+    System.out.print("Low batteries are :");
+    System.out.println(counts.lowCount);
+    System.out.print("Medium batteries are :");
+    System.out.println(counts.mediumCount);
+    System.out.print("High batteries are :");
+    System.out.println(counts.highCount);
     System.out.println("Done counting :)\n");
   }
 
-  public static void main(String[] args) {
-    testBucketingByNumberOfCycles();
-  }
 }
+ class CountsByUsage {
+    public int lowCount = 0;
+    public int mediumCount = 0;
+    public int highCount = 0;
+  }
